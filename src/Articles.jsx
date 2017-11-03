@@ -10,12 +10,11 @@ import AtricleListEntry from './ArticleListEntry.jsx';
 
 const Articles = (props) => (
 
-  
-  <Thumbnail className="card" id='items'>
+  <div className="articles" >
 	  {props.articles.map(function(newsItems,index){
 	  	return  <AtricleListEntry key={ index } list={newsItems}></AtricleListEntry> 
 	  })}
-  </Thumbnail>
+  </div>
 
 	)
 

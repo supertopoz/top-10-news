@@ -10,7 +10,7 @@ import {SortableContainer} from 'react-sortable-hoc';
 const Newsmenu = SortableContainer((props) => {
 	return (
 	
-      <Thumbnail className="card">
+      <div className="card">
 		<DragScroll >
         <div id="menu">
         {props.thumbs.map((image, i) => <ThumbsListEntry 
@@ -20,7 +20,7 @@ const Newsmenu = SortableContainer((props) => {
         	key={`item-${i}`}/> )}
         </div>
         </DragScroll>
-      </Thumbnail>
+      </div>
       
 	)
 });

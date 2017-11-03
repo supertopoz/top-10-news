@@ -1,9 +1,6 @@
 import React from 'react';
 import Newsmenu from './Newsmenu.jsx';
 import Articles from './Articles.jsx';
-import Grid from 'react-bootstrap/lib/Grid';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
 import * as firebase from 'firebase';
 import config from './config.js'
 import {arrayMove} from 'react-sortable-hoc';
@@ -126,8 +123,8 @@ getFirebaseNews(){
     this.configureFirebase()
     this.getFirebase();
     this.getFirebaseNews();
-    this.setState({'thumbs': ['http://www.selloceaapq.es/Images/loading2.gif']})
-    this.setState({'axis': 'x'})    
+    this.setState({'thumbs':["http:\//www.selloceaapq.es/Images/loading2.gif"]});
+    this.setState({'axis': 'x'})
   }
 
   chooseNews(data){
@@ -142,10 +139,10 @@ getFirebaseNews(){
   }
   render() {
       return (
-        <div>
-        <Grid fluid>
-          <Row className="show-grid">
-            <Col xs={12} md={12} lg={12}><Newsmenu 
+        <div className="grid-1">
+        <div className="menu-item">
+          <div>
+            <Newsmenu 
             thumbs={this.state.thumbs} 
             onSortEnd={this.onSortEnd} 
             onSortMove={this.onSortMove} 
@@ -154,17 +151,10 @@ getFirebaseNews(){
             helperClass="drag"
             pressDelay={200}
             />
-            </Col>
-          </Row>
-        </Grid>        
-        <Grid fluid>
-          <Row className="show-grid">
-            <Col xs={12} md={12} lg={12}><Articles 
-            articles={this.state.outlet}       
-            />
-            </Col>
-          </Row>
-        </Grid>
+          </div>
+        </div>
+        <Articles articles={this.state.outlet}/>
+
         </div>
       )
   }
